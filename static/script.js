@@ -32,10 +32,9 @@ function handleLoginSubmit(event) {
   if (input.files.length !== 0) {
     img.src = window.URL.createObjectURL(input.files[0]);
   } else {
-    img.crossOrigin = "Anonymous";
-    img.src =
-      "https://www.akamai.com/content/dam/site/im-demo/perceptual-standard.jpg?imbypass=true";
-    //alert("이미지를 선택해주세요");
+    //img.crossOrigin = "Anonymous";
+    //img.src = "https://www.akamai.com/content/dam/site/im-demo/perceptual-standard.jpg?imbypass=true";
+    alert("이미지를 선택해주세요");
   }
 
   img.addEventListener(
