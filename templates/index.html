@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{{ url_for('static', filename='styles.css') }}"
+      rel="stylesheet"
+    />
+    <title>Dimpler Image Inspector</title>
+  </head>
+  <body>
+    <h1>Dimpler Image Inspector Ver. 1.0</h1>
+    <form class="login-form">
+      <input class="file-input" type="file" accept="image/*" />
+      <button class="image-submit">Load Image</button>
+      <button class="webcam-submit">Capture Webcam</button>
+    </form>
+
+    <div class="main_contents">
+      <canvas class="canvas"> </canvas>
+      <canvas class="canvas_zoom canvas_zoom_pos"></canvas>
+      <canvas class="canvas_profile"></canvas>
+      <canvas id="myChart"></canvas>
+    </div>
+    <span class="author">선행분석 SA 정승준 TL Tel. 47606</span>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
