@@ -354,7 +354,7 @@ function drawChart(canvas_profile, pts, peak_height, idxs, peak_count) {
         console.log(point);
         if (point.length > 0) {
           peak_height[point[0].index] = undefined;
-          if (point[0].datasetIndex === 1) {
+          if (point[0].datasetIndex === 1 || point.length === 2) {
             peak_count--;
             myChart.data.datasets[2].label = `Peak Count : ${peak_count}`;
           }
