@@ -8,18 +8,17 @@
       href="{{ url_for('static', filename='styles.css') }}"
       rel="stylesheet"
     />
-    <link
-      href="{{ url_for('static', filename='favicon.ico') }}"
-      rel="icon"
-    />
-    <title>Dimpler Image Inspector</title>
+    <link href="{{ url_for('static', filename='favicon.ico') }}" rel="icon" />
+    <title class="main-title">Dimpler Image Inspector</title>
   </head>
   <body>
     <h1>Dimpler Image Inspector Ver. 1.0</h1>
     <form class="login-form">
       <input class="file-input" type="file" accept="image/*" />
+      <!--
       <button class="image-submit">Load Image</button>
       <button class="webcam-submit">Capture Webcam</button>
+      -->
     </form>
 
     <div class="main_contents">
