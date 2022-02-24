@@ -351,11 +351,12 @@ function drawChart(canvas_profile, pts, peak_height, idxs, peak_count) {
         },
       },
       onClick: function (event, point) {
-        peak_height[point[0].index] = undefined;
-        peak_count--;
-        myChart.data.datasets[2].label = `Peak Count : ${peak_count}`;
-
-        myChart.update();
+        if (point.length > 0) {
+          peak_height[point[0].index] = undefined;
+          peak_count--;
+          myChart.data.datasets[2].label = `Peak Count : ${peak_count}`;
+          myChart.update();
+        }
       },
     },
   });
