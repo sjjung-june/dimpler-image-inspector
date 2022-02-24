@@ -30,11 +30,11 @@ form > button {
 
 .canvas_zoom_pos {
   left: 10px;
-  top: 10px;
+  top: var(--canvas-height);
 }
 .canvas_zoom_pos_alt {
   left: var(--canvas-width);
-  top: 10px;
+  top: var(--canvas-height);
 }
 
 .active {

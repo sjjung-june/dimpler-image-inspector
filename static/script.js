@@ -1,5 +1,6 @@
 const loginForm = document.querySelector(".login-form");
 const input = document.querySelector(".file-input");
+
 const image_btn = document.querySelector(".image-submit");
 const webcam_btn = document.querySelector(".webcam-submit");
 const canvas = document.querySelector(".canvas");
@@ -49,6 +50,7 @@ function handleLoginSubmit(event) {
       canvas.width = img.width * SCALE_IMAGE;
       console.log(canvas.width);
       root.style.setProperty("--canvas-width", `${canvas.width - 160}px`);
+      root.style.setProperty("--canvas-height", `${canvas.height - 160}px`);
       bounds = canvas.getBoundingClientRect();
       canvas.classList.add("loaded");
       update();
@@ -314,28 +316,40 @@ function drawChart(canvas_profile, pts, peak_height, idxs, peak_count) {
           type: "line",
           label: "Line Profile",
           data: pts,
-          pointRadius: 0.5,
-          tension: 0.5,
+          borderColor: "rgb(0, 0, 0)",
+          backgroundColor: "rgb(0, 0, 0)",
+          borderWidth: 0.5,
+
+          tension: 0.1,
+          pointRadius: 0,
+          //pointRadius: 0.5,
         },
         {
           type: "scatter",
           label: "Peak",
           data: peak_height,
-          borderColor: "rgb(255, 99, 132)",
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgb(255, 100, 100)",
+          backgroundColor: "rgba(255, 100, 100, 0.1)",
         },
         {
           type: "scatter",
           label: `Peak Count = ${peak_count}`,
           data: "",
           borderColor: "rgb(132, 99, 255)",
-          backgroundColor: "rgba(132, 99, 255, 0.2)",
+          backgroundColor: "rgba(132, 99, 255, 0.1)",
         },
       ],
       labels: idxs,
     },
     options: {
       responsive: false,
+      scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+        },
+      },
     },
   });
 }
@@ -351,7 +365,8 @@ function handleMouseEnter() {
 }
 
 //loginForm.addEventListener("submit", handleLoginSubmit);
-image_btn.addEventListener("click", handleLoginSubmit);
+input.addEventListener("change", handleLoginSubmit);
 canvas_zoom.addEventListener("mouseenter", handleMouseEnter);
 
+msieversion();
 disableWebcam();
