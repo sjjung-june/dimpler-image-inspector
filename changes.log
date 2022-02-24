@@ -2,3 +2,6 @@
 - Removed Image Load Button
 - Removed Webcam Button
 - Changed Line Plot Color
+
+1.1 -> 1.2
+- Added Detected Peak Removal
