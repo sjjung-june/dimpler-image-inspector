@@ -3,6 +3,20 @@
   padding: 0px;
 }
 
+#dropbox {
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  border: 1px dashed black;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+  text-align: center;
+  margin: 10px;
+}
+
 .loaded {
   cursor: crosshair;
   border: 1px solid rgba(255, 255, 255, 0.5);

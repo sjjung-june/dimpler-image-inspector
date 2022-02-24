@@ -1,6 +1,6 @@
 const loginForm = document.querySelector(".login-form");
 const input = document.querySelector(".file-input");
-
+const dropbox = document.querySelector("#dropbox");
 const image_btn = document.querySelector(".image-submit");
 const webcam_btn = document.querySelector(".webcam-submit");
 const canvas = document.querySelector(".canvas");
@@ -367,6 +367,3 @@ function handleMouseEnter() {
 //loginForm.addEventListener("submit", handleLoginSubmit);
 input.addEventListener("change", handleLoginSubmit);
 canvas_zoom.addEventListener("mouseenter", handleMouseEnter);
-
-msieversion();
-disableWebcam();
