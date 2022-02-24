@@ -48,7 +48,7 @@ function handleLoginSubmit(event) {
       imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
       canvas.height = img.height * SCALE_IMAGE;
       canvas.width = img.width * SCALE_IMAGE;
-      console.log(canvas.width);
+
       root.style.setProperty("--canvas-width", `${canvas.width - 160}px`);
       root.style.setProperty("--canvas-height", `${canvas.height - 160}px`);
       bounds = canvas.getBoundingClientRect();
@@ -142,7 +142,7 @@ function mouseupHandler(event) {
     peak_height[element] = pts[element];
   });
 
-  const peak_count = peak_pos.length;
+  let peak_count = peak_pos.length;
 
   canvas_profile.width = img.width * SCALE_IMAGE;
 
@@ -349,6 +349,13 @@ function drawChart(canvas_profile, pts, peak_height, idxs, peak_count) {
             display: false,
           },
         },
+      },
+      onClick: function (event, point) {
+        peak_height[point[0].index] = undefined;
+        peak_count--;
+        myChart.data.datasets[2].label = `Peak Count : ${peak_count}`;
+
+        myChart.update();
       },
     },
   });
